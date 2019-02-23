@@ -1,16 +1,18 @@
 import React from 'react';
-import SocialLinks from '../components/SocialLinks';
+import SocialLinks from './SocialLinks';
 
 const Footer = () => (
-  <footer 
-    style={{ 
-      textAlign: 'center', 
-      padding: '3rem 0'
-    }}
-  >
-    &copy; 2018 by Mario Arranz. All rights reserved.
-    {/* <SocialLinks/ > */}
-  </footer>
+    <div>
+        <footer
+            style={{
+                textAlign: 'center',
+                padding: '1rem 0'
+            }}
+        >
+            &copy; 2019 by Mario Arranz. All rights reserved.
+            {/*<SocialLinks includeCV={false}/>*/}
+        </footer>
+    </div>
 );
 
 export default Footer;

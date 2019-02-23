@@ -1279,7 +1279,7 @@
         "webpack-configurator": "^0.3.1",
         "webpack-core": "^0.4.8",
         "webpack-dev-middleware": "^1.12.2",
-        "webpack-dev-server": "^1.16.5",
+        "webpack-dev-server": "^3.1.11",
         "webpack-hot-middleware": "^2.24.0",
         "webpack-md5-hash": "^0.0.5",
         "webpack-sources": "^0.2.3",
