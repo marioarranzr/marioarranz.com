@@ -1,92 +1,62 @@
-import React from 'react';
-import Article from '../components/Article';
-import Article2 from '../components/Article2';
+import React from 'react'
+import { graphql } from "gatsby"
+import get from 'lodash/get'
 
-const IndexPage = props => {
-  // const postEdges = props.data.posts.edges;
-  // const postEdges2 = props.data.posts2.edges;
+import SEO from '../components/SEO'
+import Layout from '../components/Layout'
+import Img from 'gatsby-image'
+import SocialLinks from "../components/SocialLinks";
 
-  return (
-    <div
-      style= {{
-        gridColumn: '2',
-        boxShadow: '0 0 120px rgba(0, 0, 0, 0.1)',
-        borderRadius: '0 0 1rem 1rem',
-        padding: '3rem 3rem'
-      }} 
-    >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-      </div>
-      {/* {postEdges.map(post => (
-        <Article
-          title={post.node.frontmatter.title}
-          date={post.node.frontmatter.date}
-          html={post.node.html}
-          key={post.node.fields.slug}
-          path={post.node.fields.slug}
-        />
-      ))}
-      <h2>
-        Blog: 
-      </h2>
-      {postEdges2.map(post2 => (
-        <Article2
-          title={post2.node.frontmatter.title}
-          date={post2.node.frontmatter.date}
-          excerpt={post2.node.excerpt}
-          key={post2.node.fields.slug}
-          path={post2.node.frontmatter.path}
-        />
-      ))} */}
-    </div>
-  );
-};
+class Index extends React.Component {
+	render() {
+		const { data } = this.props
+		const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
+		return (
+				<Layout location={ this.props.location }>
+					<div>
+						<SEO
+							title=""
+							url={ siteUrl }/>
+						<main className="Header-Home">
+							<div className="container">
+								<div className="row center-xs">
+									<div className="col-xs-12 col-lg-5 text-center" >
+                    <h1 className="Header-Home__title" >Hi, I&apos;m Mario Arranz<span role="img" aria-label="Hello">👋</span></h1>
+                    <h2 className="Header-Home__subtitle" >Backend developer</h2>
+                    <div className="Header-Home__icons">
+                      <SocialLinks includeCV={true}/>
+                    </div>
+									</div>
+                  <div className="col-xs-12 col-lg-7">
+                    <div className="Rotational">
+                      <div className="Rotational__avatar-container">
+                        <Img sizes={ data.avatar.sizes }/>
+                      </div>
+                    </div>
+                  </div>
+								</div>
+							</div>
+						</main>
+					</div>
+				</Layout>
+		)
+	}
+}
 
-export default IndexPage;
+export const queryHome = graphql`
+	query QueryHome {
+		avatar: imageSharp(fluid: {originalName: { regex: "/avatar.png/" }}) {
+			sizes(maxWidth: 720) {
+				...GatsbyImageSharpSizes_tracedSVG
+			}
+		}      
+		site {
+			siteMetadata {
+				title
+				siteUrl
+			}
+		}
+	}
+`
 
-/* eslint no-undef: off */
-// export const IndexQuery = graphql`
-//   query IndexQuery {
-//     posts: allMarkdownRemark(filter: {frontmatter: {path: {eq: null}}}) {
-//       edges {
-//         node {
-//           excerpt(pruneLength: 250)
-//           html
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "DD.MM.YYYY")
-//             title
-//           }
-//         }
-//       }
-//     }, posts2: allMarkdownRemark(
-//       filter: {frontmatter: {path: {ne: null}}}
-//       sort: { order: DESC, fields: [frontmatter___date] }
-//     ) {
-//       edges {
-//         node {
-//           excerpt(pruneLength: 250)
-//           html
-//           id
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "DD.MM.YYYY")
-//             path
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-//   `;
+export default Index

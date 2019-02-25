@@ -1,18 +1,38 @@
-import React from 'react';
+import React from 'react'
+import styled from 'styled-components'
 import SocialLinks from './SocialLinks';
 
-const Footer = () => (
-    <div>
-        <footer
-            style={{
-                textAlign: 'center',
-                padding: '1rem 0'
-            }}
-        >
-            &copy; 2019 by Mario Arranz. All rights reserved.
-            {/*<SocialLinks includeCV={false}/>*/}
-        </footer>
-    </div>
-);
+const Container = styled.footer`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 200px;
+	background: #f8f8f9;
+	* {
+		margin: 0;
+		padding: 0;
+	}
+`
 
-export default Footer;
+const Copy = styled.p`
+	font-size: 13px;
+	font-weight: 600;
+	color: #848687;
+	text-align: center;
+	margin-top: 20px;
+	span {
+		color: #ff7763;
+	}
+	a {
+		color: #282a2d;
+		text-decoration: none;
+	}
+`
+
+export default props => (
+	<Container>
+    <SocialLinks includeCV={false}/>
+		<Copy>© 2019 - All rights reserved. Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a></Copy>
+	</Container>
+)
