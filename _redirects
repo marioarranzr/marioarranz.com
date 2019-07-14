@@ -1,2 +1,4 @@
 # Redirect default Netlify subdomain to primary domain
 https://marioarranz.netlify.com/* https://marioarranz.com/:splat 301!
+
+/hello/* https://clever-spence-b273f1.netlify.com/* 200!

@@ -17,6 +17,8 @@ module.exports = {
       siteUrl: 'https://marioarranz.com'
    },
    plugins: [
+      'random-stuff',
+      
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-sass',
       {
