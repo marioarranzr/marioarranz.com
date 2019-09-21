@@ -1,3 +1,13 @@
+const fetch = require(`node-fetch`)
+const { createHttpLink } = require(`apollo-link-http`)
+
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
    pathPrefix: `/`,
    siteMetadata: {
@@ -20,7 +30,7 @@ module.exports = {
          resolve: 'gatsby-source-filesystem',
          options: {
             name: 'img',
-            path: `${__dirname}/src/assets/images/`,
+            path: `${__dirname}/static/images/`,
          }
       },
       {
@@ -107,11 +117,27 @@ module.exports = {
          },
       },
       `gatsby-plugin-styled-components`,
-       {
-           resolve: `gatsby-plugin-google-analytics`,
-           options: {
-               trackingId: process.env.GOOGLE_ANALYTICS_ID,
-           },
-       },
+      {
+         resolve: `gatsby-plugin-google-analytics`,
+         options: {
+            trackingId: process.env.GOOGLE_ANALYTICS_ID,
+         },
+      },
+      {
+         resolve: 'gatsby-source-graphql',
+         options: {
+           typeName: 'HASURA',
+           fieldName: 'hasura',
+           createLink: () =>
+             createHttpLink({
+               uri: `${ process.env.HASURA_GRAPHQL_URL }`,
+               headers: {
+                 "x-hasura-admin-secret": `${ process.env.HASURA_GRAPHQL_ADMIN_SECRET }`,
+               },
+               fetch,
+             }),
+           refetchInterval: 10, // Refresh every 60 seconds for new data
+         },
+      },
    ],
 }

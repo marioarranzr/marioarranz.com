@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import avatar from '../assets/images/avatar.png'
+// import avatar from '../assets/images/avatar.png'
 
 export default class SEO extends PureComponent {
 	static propTypes = {
@@ -15,7 +15,7 @@ export default class SEO extends PureComponent {
 
 	static defaultProps = {
 		title: 'Mario Arranz',
-		image: `https://marioarranz.com${avatar}`,
+		// image: `https://marioarranz.com${avatar}`,
 		url: 'https://marioarranz.com/',
 		description: 'Mario Arranz - Developer',
 		isPost: false
