@@ -29,12 +29,11 @@ class Layout extends React.Component {
 				<ThemeProvider theme={ defaultTheme }>
 					<>
 					<GlobalStyles/>
-					<Navbar 
-						activePage={ actualPage(this.props.location.pathname) } />
+					<Navbar activePage={ actualPage(this.props.location.pathname) } />
 					<div className="Dyamic-container">
 						{ this.props.children }
 					</div>
-					<Footer/>
+					<Footer socialLinks={this.props.socialLinks}/>
 					</>
 				</ThemeProvider>
 			</div>			

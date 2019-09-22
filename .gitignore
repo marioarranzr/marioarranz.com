@@ -55,9 +55,12 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+.env.*
 
 .cache/
 public
 
 .DS_Store
+
+# Local Netlify folder
+.netlify

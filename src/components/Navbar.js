@@ -86,39 +86,39 @@ class Navbar extends React.Component {
                     Index
 								</Link>
 							</li>
-							{/*<li className='Navbar__item'>*/}
-								{/*<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}*/}
-									{/*className={`Navbar__link ${ this.props.activePage === 'Blog' ? 'active' : ''}`} to="/blog">*/}
-									{/*<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">*/}
-									  {/*<polygon points="9.6 22.88 9.6 10.6 24.4 10.6 25.98 9 8 9 8 22.88 9.6 22.88" />*/}
-									  {/*<path d="M6,7H30V23h2V6.5A1.5,1.5,0,0,0,30.5,5H5.5A1.5,1.5,0,0,0,4,6.5V23H6Z"/>*/}
-									  {/*<path d="M1,25v3.4A2.6,2.6,0,0,0,3.6,31H32.34a2.6,2.6,0,0,0,2.6-2.6V25Zm32,3.4a.6.6,0,0,1-.6.6H3.56a.6.6,0,0,1-.6-.6V26.53h9.95a1.64,1.64,0,0,0,1.5,1h7.13a1.64,1.64,0,0,0,1.5-1H33Z" />*/}
-									  {/*<rect x={0} y={0} width={36} height={36} fillOpacity={0} />*/}
-									{/*</svg>*/}
-									{/*Blog*/}
-								{/*</Link>*/}
-							{/*</li>*/}
-							{/*<li className='Navbar__item'>*/}
-								{/*<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}*/}
-									{/*className={`Navbar__link ${ this.props.activePage === 'Portfolio' ? 'active' : ''}`}to="/portfolio">*/}
+							{/* <li className='Navbar__item'>
+								<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}
+									className={`Navbar__link ${ this.props.activePage === 'Blog' ? 'active' : ''}`} to="/blog">
+									<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+									  <polygon points="9.6 22.88 9.6 10.6 24.4 10.6 25.98 9 8 9 8 22.88 9.6 22.88" />
+									  <path d="M6,7H30V23h2V6.5A1.5,1.5,0,0,0,30.5,5H5.5A1.5,1.5,0,0,0,4,6.5V23H6Z"/>
+									  <path d="M1,25v3.4A2.6,2.6,0,0,0,3.6,31H32.34a2.6,2.6,0,0,0,2.6-2.6V25Zm32,3.4a.6.6,0,0,1-.6.6H3.56a.6.6,0,0,1-.6-.6V26.53h9.95a1.64,1.64,0,0,0,1.5,1h7.13a1.64,1.64,0,0,0,1.5-1H33Z" />
+									  <rect x={0} y={0} width={36} height={36} fillOpacity={0} />
+									</svg>
+									Blog
+								</Link>
+							</li>
+							<li className='Navbar__item'>
+								<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}
+									className={`Navbar__link ${ this.props.activePage === 'Portfolio' ? 'active' : ''}`}to="/portfolio">
 
-									{/*<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">*/}
-									  {/*<path d="M15,17H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H15a2,2,0,0,1,2,2v7A2,2,0,0,1,15,17ZM4,8v7H15V8Z" /><path d="M32,17H21a2,2,0,0,1-2-2V8a2,2,0,0,1,2-2H32a2,2,0,0,1,2,2v7A2,2,0,0,1,32,17ZM21,8v7H32V8Z" /><path d="M15,30H4a2,2,0,0,1-2-2V21a2,2,0,0,1,2-2H15a2,2,0,0,1,2,2v7A2,2,0,0,1,15,30ZM4,21v7H15V21Z" /><path d="M32,30H21a2,2,0,0,1-2-2V21a2,2,0,0,1,2-2H32a2,2,0,0,1,2,2v7A2,2,0,0,1,32,30ZM21,21v7H32V21Z" />*/}
-									  {/*<rect x={0} y={0} width={36} height={36} fillOpacity={0} />*/}
-									{/*</svg>*/}
-									{/*Portfolio*/}
-								{/*</Link>*/}
-							{/*</li>*/}
-							{/*<li className='Navbar__item'>*/}
-								{/*<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}*/}
-									{/*className={`Navbar__link ${ this.props.activePage === 'Contact' ? 'active' : ''}`} to="/contact">*/}
-									{/*<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">*/}
-									  {/*<path d="M32,6H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V8A2,2,0,0,0,32,6ZM30.46,28H5.66l7-7.24-1.44-1.39L4,26.84V9.52L16.43,21.89a2,2,0,0,0,2.82,0L32,9.21v17.5l-7.36-7.36-1.41,1.41ZM5.31,8H30.38L17.84,20.47Z" />*/}
-									  {/*<rect x={0} y={0} width={36} height={36} fillOpacity={0} />*/}
-									{/*</svg>*/}
-									{/*Contact*/}
-								{/*</Link>*/}
-							{/*</li>*/}
+									<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+									  <path d="M15,17H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H15a2,2,0,0,1,2,2v7A2,2,0,0,1,15,17ZM4,8v7H15V8Z" /><path d="M32,17H21a2,2,0,0,1-2-2V8a2,2,0,0,1,2-2H32a2,2,0,0,1,2,2v7A2,2,0,0,1,32,17ZM21,8v7H32V8Z" /><path d="M15,30H4a2,2,0,0,1-2-2V21a2,2,0,0,1,2-2H15a2,2,0,0,1,2,2v7A2,2,0,0,1,15,30ZM4,21v7H15V21Z" /><path d="M32,30H21a2,2,0,0,1-2-2V21a2,2,0,0,1,2-2H32a2,2,0,0,1,2,2v7A2,2,0,0,1,32,30ZM21,21v7H32V21Z" />
+									  <rect x={0} y={0} width={36} height={36} fillOpacity={0} />
+									</svg>
+									Portfolio
+								</Link>
+							</li>
+							<li className='Navbar__item'>
+								<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}
+									className={`Navbar__link ${ this.props.activePage === 'Contact' ? 'active' : ''}`} to="/contact">
+									<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+									  <path d="M32,6H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V8A2,2,0,0,0,32,6ZM30.46,28H5.66l7-7.24-1.44-1.39L4,26.84V9.52L16.43,21.89a2,2,0,0,0,2.82,0L32,9.21v17.5l-7.36-7.36-1.41,1.41ZM5.31,8H30.38L17.84,20.47Z" />
+									  <rect x={0} y={0} width={36} height={36} fillOpacity={0} />
+									</svg>
+									Contact
+								</Link>
+							</li> */}
 						</ul>
 					</div>
 				</div>

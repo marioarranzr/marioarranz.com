@@ -32,7 +32,7 @@ const Copy = styled.p`
 
 export default props => (
 	<Container>
-    <SocialLinks includeCV={false}/>
-		<Copy>© 2019 - All rights reserved. Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a></Copy>
+    <SocialLinks socialLinks={props.socialLinks} includeCV={false}/>
+		<Copy>© 2019 - All rights reserved. <br></br>Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a>, have a look in <a href="https://github.com/marioarranzr/marioarranz.com" target="_blank" rel="noopener noreferrer">🖥</a></Copy>
 	</Container>
 )

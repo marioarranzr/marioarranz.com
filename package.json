@@ -1,10 +1,11 @@
 {
-	"name": "marioarranzr.com",
+	"name": "marioarranz.com",
 	"description": "This is my personal web. Mario Arranz",
 	"version": "1.0.0",
 	"author": "Mario Arranz <marioarranzr@gmail.com>",
 	"dependencies": {
 		"@webcomponents/custom-elements": "^1.2.1",
+		"apollo-link-http": "^1.5.16",
 		"ast-get-object": "^1.4.1",
 		"babel-plugin-styled-components": "^1.8.0",
 		"bluebird": "^3.5.2",
@@ -21,7 +22,7 @@
 		"gatsby-plugin-react-helmet": "^3.0.1",
 		"gatsby-plugin-robots-txt": "^1.3.0",
 		"gatsby-plugin-sass": "^2.0.3",
-		"gatsby-plugin-sharp": "^2.0.11",
+		"gatsby-plugin-sharp": "^2.1.7",
 		"gatsby-plugin-sitemap": "^2.0.2",
 		"gatsby-plugin-styled-components": "^3.0.1",
 		"gatsby-plugin-typography": "^2.2.1",
@@ -35,6 +36,7 @@
 		"gatsby-remark-responsive-iframe": "^2.0.6",
 		"gatsby-remark-smartypants": "^2.0.6",
 		"gatsby-source-filesystem": "^2.0.7",
+		"gatsby-source-graphql": "^2.0.0",
 		"gatsby-transformer-remark": "^2.1.11",
 		"gatsby-transformer-sharp": "^2.1.7",
 		"lodash": "^4.17.11",
@@ -60,7 +62,7 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "gatsby build",
-		"develop": "gatsby develop",
+		"develop": "GATSBY_ACTIVE_ENV=local gatsby develop",
 		"format": "prettier --write 'src/**/*.js'",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
