@@ -56,12 +56,12 @@ export const queryHome = graphql`
 		}
 		hasura {
 			social(where: {visible: {_eq: true}}) {
-        link_url
-        icon_url
+				link_url
+				icon_url
 				description
 				isResume
-      }
-    }
+      		}
+    	}
 	}
 `
 

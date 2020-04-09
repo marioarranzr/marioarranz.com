@@ -67,15 +67,15 @@ class Error_404 extends React.Component {
 export default Error_404;
 
 export const query404SocialLink = graphql`
-  query Query404SocialLink {
-    hasura {
+  	query Query404SocialLink {
+    	hasura {
 			social(where: {visible: {_eq: true}}) {
-        link_url
-        icon_url
+				link_url
+				icon_url
 				description
 				isResume
-      }
-    }
-  }
+      		}
+    	}
+  	}
 `
 
