@@ -20,7 +20,7 @@ class Blog extends React.Component {
         const { data } = this.props
         console.log(data.allDevArticles.edges)
         return (
-			<Layout socialLinks="" location={this.props.location}>
+			<Layout socialLinks={this.props.data.hasura.social} location={this.props.location}>
                 <Container>
                     <SEO title="Blog" url=""/>
                     {data.allDevArticles.edges.sort(
@@ -88,7 +88,15 @@ export const queryBlog = graphql`
                 }
             }
         }
-    }
+    	hasura {
+			social(where: {visible: {_eq: true}}) {
+				link_url
+				icon_url
+				description
+				isResume
+      		}
+    	}
+  	}
 `
 
 export default Blog
