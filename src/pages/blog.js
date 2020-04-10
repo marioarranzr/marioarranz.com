@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 
 const Container = styled.main`
 	display: flex;
-	background: #fbf8f3;
+    background: #fbf8f3;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
@@ -18,22 +18,15 @@ const Container = styled.main`
 
 const ArticleStyles = styled.article`
   align-self: center;
-  width: 600px;
-  text-shadow: 1px 1px 1px ${props => props.theme.snow};
+  text-shadow: 1px 1px 1px;
   a {
     text-decoration: none;
-    color: ${props => props.theme.snow};
   }
   img {
     transition: all 0.7s ease;
-    height: 100%;
-    width: 100%;
+    height: 40%;
+    width: 40%;
     box-shadow: 0 0 15px #000;
-    filter: grayscale(40%) sepia(1);
-    &:hover {
-      opacity: 0.7;
-      transform: scale(1.02);
-    }
   }
   @media screen and (max-width: 1024px) {
     width: 80vw;
@@ -42,12 +35,14 @@ const ArticleStyles = styled.article`
 
 const Article = ({ article }) => (
     <ArticleStyles>
-      <a href={`https://dev.to${article.path}`} target="_blank">
-        <img src={article.cover_image} alt={article.title} />
-        <h2>{article.title}</h2>
-        <p>{article.description}</p>
-        {/* <h3>{formatDate(article.published_at)}</h3> */}
-      </a>
+            <a href={`https://dev.to${article.path}`} target="_blank">
+                <div><img src={article.cover_image} alt={article.title} /></div>
+                <div> 
+                    <h2>{article.title}</h2>
+                    <p>{article.description}</p>
+                    {/* <h3>{formatDate(article.published_at)}</h3> */}
+                </div>
+            </a>
     </ArticleStyles>
   );
   
