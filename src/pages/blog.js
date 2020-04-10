@@ -16,6 +16,42 @@ const Container = styled.main`
 	min-height: 380px;
 `
 
+const ArticleStyles = styled.article`
+  align-self: center;
+  width: 600px;
+  text-shadow: 1px 1px 1px ${props => props.theme.snow};
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.snow};
+  }
+  img {
+    transition: all 0.7s ease;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 15px #000;
+    filter: grayscale(40%) sepia(1);
+    &:hover {
+      opacity: 0.7;
+      transform: scale(1.02);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    width: 80vw;
+  }
+`;
+
+const Article = ({ article }) => (
+    <ArticleStyles>
+      <a href={`https://dev.to${article.path}`} target="_blank">
+        <img src={article.cover_image} alt={article.title} />
+        <h2>{article.title}</h2>
+        <p>{article.description}</p>
+        {/* <h3>{formatDate(article.published_at)}</h3> */}
+      </a>
+    </ArticleStyles>
+  );
+  
+
 class Blog extends React.Component {
 	render() {
         const { data } = this.props
@@ -24,42 +60,14 @@ class Blog extends React.Component {
 			<Layout socialLinks={this.props.data.hasura.social} location={this.props.location}>
                 <Container>
                     <SEO title="Blog" url={ siteUrl }/>
-                    {data.allDevArticles.edges.sort(
+                    {data.allDevArticles.edges
+                    .sort(
                         ({ node: { article: postA } }, { node: { article: postB } }) =>
                             -postA.published_at.localeCompare(postB.published_at)
                         )
-                        .map(({ node: { article: post } }) => (
-                        <div key={post.id} style={{ margin: "16px 0 32px 0" }}>
-                            <a href={post.url} className="hover">
-                            <div
-                                className="flex"
-                                style={{
-                                justifyContent: "space-between",
-                                alignItems: "flex-start",
-                                }}
-                            >
-                                <h2 className="m0" style={{ marginRight: 8 }}>
-                                {post.title}
-                                </h2>
-                                <p
-                                className="m0"
-                                style={{
-                                    color: "grey",
-                                    textAlign: "end",
-                                    flexShrink: 0,
-                                    paddingTop: 8,
-                                }}
-                                >
-                                {formatDate(post.published_at)}
-                                </p>
-                            </div>
-                            <p className="m0" style={{ color: "grey", marginTop: 8 }}>
-                                {post.description}
-                            </p>
-                            </a>
-                        </div>
-                        ))
-                    }
+                    .map((articleEdge, key) => (
+                        <Article key={key} article={{ ...articleEdge.node.article }} />
+                    ))}
                 </Container>
             </Layout>
         )
@@ -75,7 +83,14 @@ function formatDate(dateStr) {
 }
 
 export const queryBlog = graphql`
-    query queryBlog {
+
+    query QueryBlog {
+        site {
+            siteMetadata {
+                title
+                siteUrl
+            }
+        }
         allDevArticles {
             edges {
                 node {
@@ -85,6 +100,8 @@ export const queryBlog = graphql`
                         description
                         published_at
                         url
+                        cover_image
+                        path
                     }
                 }
             }
