@@ -88,7 +88,6 @@ module.exports = {
       `gatsby-plugin-catch-links`,
       'gatsby-plugin-sitemap',
       'gatsby-plugin-robots-txt',
-      'gatsby-plugin-netlify-cms',
       {
          resolve: `gatsby-plugin-netlify`,
          options: {
