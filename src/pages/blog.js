@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
+import get from 'lodash/get'
 
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
@@ -18,11 +19,11 @@ const Container = styled.main`
 class Blog extends React.Component {
 	render() {
         const { data } = this.props
-        console.log(data.allDevArticles.edges)
+        const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
         return (
 			<Layout socialLinks={this.props.data.hasura.social} location={this.props.location}>
                 <Container>
-                    <SEO title="Blog" url=""/>
+                    <SEO title="Blog" url={ siteUrl }/>
                     {data.allDevArticles.edges.sort(
                         ({ node: { article: postA } }, { node: { article: postB } }) =>
                             -postA.published_at.localeCompare(postB.published_at)
@@ -88,7 +89,7 @@ export const queryBlog = graphql`
                 }
             }
         }
-    	hasura {
+        hasura {
 			social(where: {visible: {_eq: true}}) {
 				link_url
 				icon_url
