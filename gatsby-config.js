@@ -88,7 +88,6 @@ module.exports = {
       `gatsby-plugin-catch-links`,
       'gatsby-plugin-sitemap',
       'gatsby-plugin-robots-txt',
-      'gatsby-plugin-netlify-cms',
       {
          resolve: `gatsby-plugin-netlify`,
          options: {
@@ -139,5 +138,11 @@ module.exports = {
            refetchInterval: 10, // Refresh every 60 seconds for new data
          },
       },
+      {
+         resolve: `gatsby-source-dev`,
+         options: {
+           username: `marioarranzr`,
+         },
+       },
    ],
 }

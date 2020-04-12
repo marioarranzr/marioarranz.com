@@ -33,7 +33,7 @@ const Description = styled.p`
 		color: #282a2d;
 	}
 `
-class Error_404 extends React.Component {
+export default class Error_404 extends React.Component {
 	render() {
 		return (
 			<Layout socialLinks={this.props.data.hasura.social} location={this.props.location}>
@@ -64,18 +64,15 @@ class Error_404 extends React.Component {
 	}
 }
 
-export default Error_404;
-
 export const query404SocialLink = graphql`
-  query Query404SocialLink {
-    hasura {
+  	query Query404SocialLink {
+    	hasura {
 			social(where: {visible: {_eq: true}}) {
-        link_url
-        icon_url
+				link_url
+				icon_url
 				description
 				isResume
-      }
-    }
-  }
+      		}
+    	}
+  	}
 `
-

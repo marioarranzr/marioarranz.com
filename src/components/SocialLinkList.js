@@ -1,6 +1,6 @@
-import React from "react"
-import styled from 'styled-components';
-import { Box } from 'rebass';
+import React, { PureComponent } from 'react'
+import styled from 'styled-components'
+import { Box } from 'rebass'
 
 const RenponsiveLogo = styled.img`
 	width: 60px;
@@ -16,11 +16,11 @@ const Logo = ({ url, logo, alt = '' }) => (
 );
 
 
-class SocialLinkList extends React.Component {
+export default class SocialLinkList extends PureComponent {
   render() {
     var isResume = this.props.isResume
     const socialLinks = this.props.socialLinks.filter(function (s) {
-      return s.isResume == isResume;
+      return s.isResume == isResume
     }).map((s, i) => (
       <Logo
         key={i}
@@ -35,5 +35,3 @@ class SocialLinkList extends React.Component {
     )
   }
 }
-
-export default SocialLinkList;

@@ -5,9 +5,9 @@ import get from 'lodash/get'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
-import SocialLinks from "../components/SocialLinks";
+import SocialLinks from "../components/SocialLinks"
 
-class Index extends React.Component {
+export default class Index extends React.Component {
 	render() {
 		const { data } = this.props
 		const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
@@ -56,13 +56,11 @@ export const queryHome = graphql`
 		}
 		hasura {
 			social(where: {visible: {_eq: true}}) {
-        link_url
-        icon_url
+				link_url
+				icon_url
 				description
 				isResume
-      }
-    }
+      		}
+    	}
 	}
 `
-
-export default Index

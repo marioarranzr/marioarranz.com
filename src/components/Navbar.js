@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import { isPostOrProject } from '../utils'
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
 	state = {
 		navbarIsTop: true,
 		menuIsOpen: false
@@ -29,7 +29,7 @@ class Navbar extends React.Component {
 		}
 		window.addEventListener('scroll', scrollListener)
 		window.addEventListener('resize', () => {
-			let width = window.innerWidth;
+			let width = window.innerWidth
 			if(width >= 768) {
 				this.setState({
 					menuIsOpen: false
@@ -83,10 +83,10 @@ class Navbar extends React.Component {
 									  <path d="M33.71,17.29l-15-15a1,1,0,0,0-1.41,0l-15,15a1,1,0,0,0,1.41,1.41L18,4.41,32.29,18.71a1,1,0,0,0,1.41-1.41Z" />
 									  <path d="M28,32h-5V22H13V32H8V18L6,20V32a2,2,0,0,0,2,2h7V24h6V34h7a2,2,0,0,0,2-2V19.76l-2-2Z" />
 									</svg>
-                    Index
+                    				Index
 								</Link>
 							</li>
-							{/* <li className='Navbar__item'>
+							<li className='Navbar__item'>
 								<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}
 									className={`Navbar__link ${ this.props.activePage === 'Blog' ? 'active' : ''}`} to="/blog">
 									<svg className="icon-item" version="1.1" width={36} height={36} viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -98,7 +98,7 @@ class Navbar extends React.Component {
 									Blog
 								</Link>
 							</li>
-							<li className='Navbar__item'>
+							{/* <li className='Navbar__item'>
 								<Link onClick={ (e) => { this.setState({menuIsOpen: false}) }}
 									className={`Navbar__link ${ this.props.activePage === 'Portfolio' ? 'active' : ''}`}to="/portfolio">
 
@@ -126,5 +126,3 @@ class Navbar extends React.Component {
 		)
 	}
 }
-
-export default Navbar
