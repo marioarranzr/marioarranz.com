@@ -12,7 +12,7 @@ import 'react-awesome-button/src/styles/styles.scss'
 import './index.scss'
 import { GlobalStyles, defaultTheme } from '../styles'
 
-class Layout extends React.Component {
+export default class Layout extends React.Component {
 	componentDidMount() {
 		require('@webcomponents/custom-elements/custom-elements.min.js')
 	}
@@ -40,5 +40,3 @@ class Layout extends React.Component {
 		)
 	}
 }
-
-export default Layout

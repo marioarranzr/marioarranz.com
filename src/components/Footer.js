@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import SocialLinks from './SocialLinks';
+import SocialLinks from './SocialLinks'
 
 const Container = styled.footer`
 	display: flex;
@@ -30,9 +30,13 @@ const Copy = styled.p`
 	}
 `
 
-export default props => (
-	<Container>
-    <SocialLinks socialLinks={props.socialLinks} includeCV={false}/>
-		<Copy>© 2019 - All rights reserved. <br></br>Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a>, have a look in <a href="https://github.com/marioarranzr/marioarranz.com" target="_blank" rel="noopener noreferrer">🖥</a></Copy>
-	</Container>
-)
+export default class Footer extends PureComponent {
+	render() {
+		return (
+			<Container>
+				<SocialLinks socialLinks={props.socialLinks} includeCV={false}/>
+					<Copy>© 2020 - All rights reserved. <br></br>Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a>, have a look in <a href="https://github.com/marioarranzr/marioarranz.com" target="_blank" rel="noopener noreferrer">🖥</a></Copy>
+			</Container>
+		)
+	}
+}

@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import { isPostOrProject } from '../utils'
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
 	state = {
 		navbarIsTop: true,
 		menuIsOpen: false
@@ -29,7 +29,7 @@ class Navbar extends React.Component {
 		}
 		window.addEventListener('scroll', scrollListener)
 		window.addEventListener('resize', () => {
-			let width = window.innerWidth;
+			let width = window.innerWidth
 			if(width >= 768) {
 				this.setState({
 					menuIsOpen: false
@@ -126,5 +126,3 @@ class Navbar extends React.Component {
 		)
 	}
 }
-
-export default Navbar
