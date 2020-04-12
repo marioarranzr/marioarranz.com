@@ -34,7 +34,7 @@ export default class Footer extends PureComponent {
 	render() {
 		return (
 			<Container>
-				<SocialLinks socialLinks={props.socialLinks} includeCV={false}/>
+				<SocialLinks socialLinks={this.props.socialLinks} includeCV={false}/>
 					<Copy>© 2020 - All rights reserved. <br></br>Made with <span>❤</span> by <a href="https://twitter.com/marioarranzr" target="_blank" rel="noopener noreferrer">Mario Arranz</a>, have a look in <a href="https://github.com/marioarranzr/marioarranz.com" target="_blank" rel="noopener noreferrer">🖥</a></Copy>
 			</Container>
 		)
