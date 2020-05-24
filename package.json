@@ -5,6 +5,8 @@
 	"author": "Mario Arranz <marioarranzr@gmail.com>",
 	"dependencies": {
 		"@webcomponents/custom-elements": "^1.2.1",
+		"acorn": "^7.2.0",
+		"acorn-jsx": "^5.2.0",
 		"apollo-link-http": "^1.5.16",
 		"ast-get-object": "^1.4.1",
 		"babel-plugin-styled-components": "^1.8.0",
