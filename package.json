@@ -43,7 +43,7 @@
 		"gatsby-transformer-sharp": "^2.1.7",
 		"lodash": "^4.17.21",
 		"node-sass": "^4.9.4",
-		"prismjs": "^1.24.0",
+		"prismjs": "^1.25.0",
 		"react": "^16.6.0",
 		"react-awesome-button": "^5.0.0",
 		"react-dom": "^16.6.0",
