@@ -1,12 +1,14 @@
 # marioarranz.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/43c066ad-c303-4260-a522-20d346d3a852/deploy-status)](https://app.netlify.com/sites/marioarranz/deploys)
+Ultra-modern bento-box portfolio based on BentoBoxPortfolio, customized for Mario Arranz.
 
-## Running in development
-`gatsby develop [-p 8000]` or `yarn develop`
+## Local development
+1. `npm install`
+2. `npm run dev`
+3. Open `http://localhost:3000`
 
-## Trouble solving
-- Remove node_modules folder `rm -R node_modules/`
-- `npm install`
-- Remove package-lock.json `rm package-lock.json`
-- `yarn install` # Better and faster than npm
+Note: `http://localhost:8000` will be blank because this is a Next.js app, not a static site.
+
+## Configuration
+- Update `.env` with your own values
+- Content lives in `components/bento.tsx`, `lib/data.ts`, and `app/api/fetch-project-posts/route.ts`
