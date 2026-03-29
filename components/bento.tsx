@@ -57,7 +57,7 @@ const features = [
     Icon: "",
     name: "I'm Mario",
     description:
-      "backend engineer focused on platform reliability, APIs, and pragmatic AI integrations.",
+      "Senior engineer who builds complete software products from scratch. Payments, crypto platforms, SaaS backends, and API-heavy systems.",
     className: "col-span-3 md:col-span-1",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Visit portfolio",
@@ -119,8 +119,8 @@ const features = [
 
   {
     Icon: "",
-    name: "Tech Domain",
-    description: "Backend, platform, and AI workflows focused on reliable delivery.",
+    name: "What I Build",
+    description: "The areas I cover, built around shipping complete, production-ready systems.",
     href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr",
     cta: "View projects",
     className: "col-span-3 md:col-span-3",
@@ -139,7 +139,7 @@ const features = [
               href={process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr"}
               key={idx}
               className={cn(
-                "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
+                "relative w-52 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -147,7 +147,7 @@ const features = [
             >
               <div className="flex flex-row items-center gap-2">
                 <div className="flex flex-col">
-                  <figcaption className="text-lg font-bold dark:text-white ">
+                  <figcaption className="text-lg font-bold dark:text-white min-h-[3.5rem] flex items-start">
                     {f.name}
                   </figcaption>
                 </div>
@@ -163,7 +163,7 @@ const features = [
     Icon: "",
     name: "Technologies",
     description:
-      "A combination of proven backend tools and modern cloud platforms to build reliable systems.",
+      "Proven tools chosen for reliability. The stack is secondary to the system design.",
     href: "/technologies",
     cta: "View all technologies",
     className: "col-span-3 md:col-span-2",
@@ -179,12 +179,12 @@ const features = [
   {
     Icon: "",
     name: "Seamless Deployments",
-    description: "Shipping reliable releases with observability baked in.",
+    description: "Reliable releases with monitoring, rollback, and observability built in from the start.",
     className: "col-span-3 md:col-span-1",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Learn more",
     background: (
-      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_25%,#000_70%)] group-hover:scale-105">
+      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_45%,#000_75%)] group-hover:scale-105">
         <Orbit />
       </div>
     ),
@@ -193,7 +193,7 @@ const features = [
     Icon: "",
     name: "AI Integrations",
     description:
-      "LLM workflows, retrieval, automation, and safeguards for production systems.",
+      "LLM pipelines, retrieval, and AI-assisted workflows hardened for production environments.",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Explore AI work",
     className: "col-span-3 md:col-span-2",
@@ -239,7 +239,7 @@ const features = [
     Icon: "",
     name: "Worldwide Reach",
     description:
-      "Deploying to any region on earth. From on-prem to the edge.",
+      "Deployed wherever your users are. Cloud, multi-region, or on-prem.",
     className: "col-span-3 md:col-span-1",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "See example",
@@ -264,7 +264,7 @@ const features = [
     Icon: "",
     name: "Project Showcase",
     description:
-      "A few recent backend, platform, and AI projects.",
+      "Systems I've designed and shipped. Payment platforms, crypto systems, SaaS backends.",
     className: "col-span-3 md:col-span-3",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "View projects",
@@ -286,7 +286,7 @@ const features = [
     Icon: "",
     name: "",
     description: "",
-    className: "col-span-3 md:col-span-3 md:row-span-2",
+    className: "col-span-3 md:col-span-3 row-span-2",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "",
     background: (
@@ -306,15 +306,14 @@ const features = [
           <div className="max-w-sm w-full flex flex-col gap-2">
             <div className="text-5xl md:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
               <BlurIn duration={0.5} className="h-full">
-                Let&apos;s connect.
+                Let&apos;s work together.
               </BlurIn>
             </div>
             <div className="w-full flex justify-center text-neutral-500 dark:text-neutral-400">
-              Leave your email to get the conversation started. I&apos;ll be in
-              touch soon.
+              Tell me what you&apos;re building. I&apos;ll respond within a day.
             </div>
             <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
-              *Your email will never be shared with anyone.
+              *Your email is never shared.
             </div>
             <div className="">
               <EmailForm />

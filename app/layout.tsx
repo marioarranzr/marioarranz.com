@@ -7,9 +7,9 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mario Arranz",
+  title: "Mario Arranz — Lead Engineer & Product Builder",
   description:
-    "Mario Arranz — backend engineer focused on scalable systems and AI integrations.",
+    "Mario Arranz — I design and build software products end-to-end. Payments, crypto platforms, SaaS backends, and API-heavy systems, delivered fast.",
 };
 
 export default function RootLayout({

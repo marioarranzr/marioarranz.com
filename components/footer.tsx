@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto p-6">
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+          &copy; {new Date().getFullYear()} Mario Arranz. All rights reserved.
         </p>
       </div>
     </footer>
