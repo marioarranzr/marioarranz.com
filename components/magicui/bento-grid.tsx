@@ -33,6 +33,7 @@ const BentoCard = ({
   cta,
   hideOverlayOnHover = false,
   compactText = false,
+  staticOverlay = false,
 }: {
   name?: string;
   className?: string;
@@ -43,6 +44,7 @@ const BentoCard = ({
   cta?: string;
   hideOverlayOnHover?: boolean;
   compactText?: boolean;
+  staticOverlay?: boolean;
 }) => (
   <BlurIn
     duration={0.1}
@@ -59,7 +61,8 @@ const BentoCard = ({
     <div>{background}</div>
     <div
       className={cn(
-        "pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 group-hover:-translate-y-10",
+        "pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300",
+        !staticOverlay && "group-hover:-translate-y-10",
         compactText ? "p-3" : "p-6",
         hideOverlayOnHover && "group-hover:opacity-0"
       )}

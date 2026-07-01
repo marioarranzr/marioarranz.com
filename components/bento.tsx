@@ -68,13 +68,13 @@ const features = [
       </>
     ),
     className: "col-span-3 md:col-span-2",
-    hideOverlayOnHover: true,
     compactText: true,
+    staticOverlay: true,
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Visit portfolio",
     background: (
-      <div className="absolute inset-0 flex h-full w-full flex-col">
-        <div className="relative w-full h-[55%] md:h-[63%] shrink-0 overflow-hidden rounded-t-xl">
+      <div className="absolute inset-0 flex h-full w-full flex-col items-start p-6">
+        <div className="relative h-32 w-32 md:h-40 md:w-40 shrink-0 overflow-hidden rounded-full border-2 border-neutral-950/[.08] dark:border-white/10 shadow">
           <BlurIn duration={0.5} className="block h-full w-full group-hover:scale-105 transition-transform duration-500 ease-in-out">
             <Image
               className="object-cover object-top h-full w-full"
@@ -91,40 +91,40 @@ const features = [
               blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
             />
           </BlurIn>
-
-          <FadeIn
-            direction="right"
-            framerProps={{
-              show: { transition: { delay: 1.5 } },
-            }}
-            className="absolute top-2 right-2"
-          >
-            <button
-              onClick={() => {
-                window.scrollTo({
-                  top: document.body.scrollHeight,
-                  behavior: "smooth",
-                });
-              }}
-              className="bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
-            >
-              <div className="flex items-center gap-2">
-                <div
-                  className={`w-3 h-3 rounded-full animate-pulse ${
-                    process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
-                      ? "bg-emerald-400"
-                      : "bg-yellow-400"
-                  }`}
-                ></div>
-                <div className="">
-                  {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
-                    ? "available"
-                    : "on engagement"}
-                </div>
-              </div>
-            </button>
-          </FadeIn>
         </div>
+
+        <FadeIn
+          direction="right"
+          framerProps={{
+            show: { transition: { delay: 1.5 } },
+          }}
+          className="absolute top-6 right-6"
+        >
+          <button
+            onClick={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            }}
+            className="bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-2">
+              <div
+                className={`w-3 h-3 rounded-full animate-pulse ${
+                  process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                    ? "bg-emerald-400"
+                    : "bg-yellow-400"
+                }`}
+              ></div>
+              <div className="">
+                {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                  ? "available"
+                  : "on engagement"}
+              </div>
+            </div>
+          </button>
+        </FadeIn>
       </div>
     ),
   },
