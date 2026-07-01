@@ -18,7 +18,7 @@ export default function Hero() {
             I take products from idea to production. Senior architecture, AI-accelerated delivery, and full ownership of the build. We ship fast without cutting corners.
           </BlurIn>
 
-          <FadeIn direction="down" className="my-class flex items-center gap-2 w-full mt-4">
+          <FadeIn direction="down" className="my-class flex items-center gap-2 w-full mt-8">
             <a
               href={
                 process.env.NEXT_PUBLIC_GITHUB_URL ||

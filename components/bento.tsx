@@ -29,7 +29,7 @@ const features = [
     description: "",
     href: "",
     cta: "",
-    className: "col-span-3 md:col-span-3",
+    className: "col-span-3 md:col-span-4",
     background: (
       <>
         <Particles
@@ -59,23 +59,25 @@ const features = [
     name: "I'm Mario",
     description: (
       <>
-        13+ years of engineering, mainly in payments, digital identity, and security. I lead development teams and build backend systems that stay in production.
-        <div className="mt-2 flex gap-1.5 text-sm" title={languages.map((l) => l.language).join(", ")}>
+        13+ years in payments, digital identity, and security. I lead teams and build backend systems that stay in production.
+        <div className="mt-1 flex gap-1.5 text-sm" title={languages.map((l) => l.language).join(", ")}>
           {languageFlags.map((flag) => (
             <span key={flag}>{flag}</span>
           ))}
         </div>
       </>
     ),
-    className: "col-span-3 md:col-span-3",
+    className: "col-span-3 md:col-span-2",
+    hideOverlayOnHover: true,
+    compactText: true,
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Visit portfolio",
     background: (
-      <div>
-        <div className="absolute right-0 top-0 h-3/4 w-full border-none [mask-image:linear-gradient(to_top,transparent_30%,#000_65%)]">
-          <BlurIn duration={0.5} className="group-hover:scale-105 transition-transform duration-500 ease-in-out">
+      <div className="absolute inset-0 flex h-full w-full flex-col">
+        <div className="relative w-full h-[55%] md:h-[63%] shrink-0 overflow-hidden rounded-t-xl">
+          <BlurIn duration={0.5} className="block h-full w-full group-hover:scale-105 transition-transform duration-500 ease-in-out">
             <Image
-              className="object-cover object-center h-full w-full"
+              className="object-cover object-top h-full w-full"
               src={
                 process.env.NEXT_PUBLIC_AVATAR_URL ||
                 "https://github.com/marioarranzr.png"
@@ -89,39 +91,40 @@ const features = [
               blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
             />
           </BlurIn>
-        </div>
 
-        <FadeIn
-          direction="right"
-          framerProps={{
-            show: { transition: { delay: 1.5 } },
-          }}
-        >
-          <button
-            onClick={() => {
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              });
+          <FadeIn
+            direction="right"
+            framerProps={{
+              show: { transition: { delay: 1.5 } },
             }}
-            className="absolute top-2 right-2 bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+            className="absolute top-2 right-2"
           >
-            <div className="flex items-center gap-2">
-              <div
-                className={`w-3 h-3 rounded-full animate-pulse ${
-                  process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
-                    ? "bg-emerald-400"
-                    : "bg-yellow-400"
-                }`}
-              ></div>
-              <div className="">
-                {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
-                  ? "available"
-                  : "on engagement"}
+            <button
+              onClick={() => {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                });
+              }}
+              className="bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className={`w-3 h-3 rounded-full animate-pulse ${
+                    process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                      ? "bg-emerald-400"
+                      : "bg-yellow-400"
+                  }`}
+                ></div>
+                <div className="">
+                  {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                    ? "available"
+                    : "on engagement"}
+                </div>
               </div>
-            </div>
-          </button>
-        </FadeIn>
+            </button>
+          </FadeIn>
+        </div>
       </div>
     ),
   },

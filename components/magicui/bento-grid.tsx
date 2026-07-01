@@ -32,6 +32,7 @@ const BentoCard = ({
   href,
   cta,
   hideOverlayOnHover = false,
+  compactText = false,
 }: {
   name?: string;
   className?: string;
@@ -41,6 +42,7 @@ const BentoCard = ({
   href?: string;
   cta?: string;
   hideOverlayOnHover?: boolean;
+  compactText?: boolean;
 }) => (
   <BlurIn
     duration={0.1}
@@ -57,11 +59,12 @@ const BentoCard = ({
     <div>{background}</div>
     <div
       className={cn(
-        "pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10",
+        "pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 group-hover:-translate-y-10",
+        compactText ? "p-3" : "p-6",
         hideOverlayOnHover && "group-hover:opacity-0"
       )}
     >
-      <div className="flex flex-col gap-2">
+      <div className={cn("flex flex-col", compactText ? "gap-1" : "gap-2")}>
         <div>
           {Icon !== "" ? (
             <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
@@ -70,11 +73,11 @@ const BentoCard = ({
           )}
         </div>
 
-        <div className="text-3xl font-semibold text-neutral-700 dark:text-neutral-300">
+        <div className={cn("font-semibold text-neutral-700 dark:text-neutral-300", compactText ? "text-2xl" : "text-3xl")}>
           {name}
         </div>
       </div>
-      <div className="w-full text-neutral-500 dark:text-neutral-400 dark:drop-shadow">
+      <div className={cn("w-full text-neutral-500 dark:text-neutral-400 dark:drop-shadow", compactText && "text-sm")}>
         {description}
       </div>
     </div>

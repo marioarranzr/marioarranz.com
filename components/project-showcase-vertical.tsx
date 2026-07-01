@@ -20,6 +20,7 @@ export interface Project {
     tags: string[];
     projectURL?: string;
     repoURL?: string;
+    iconOnLight?: boolean;
   };
 }
 
@@ -29,7 +30,7 @@ interface ProjectShowcaseVerticalProps {
 
 const ReviewCard = ({ project }: { project: Project }) => {
   const { slug, body, data } = project;
-  const { title, image, description, projectURL } = data;
+  const { title, image, description, projectURL, iconOnLight } = data;
 
   return (
     <figure
@@ -45,12 +46,17 @@ const ReviewCard = ({ project }: { project: Project }) => {
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <div className="flex items-start gap-2">
-              <div className="relative h-12 w-14">
+              <div
+                className={cn(
+                  "relative h-12 w-14 rounded-lg shadow",
+                  iconOnLight && "bg-white p-1.5"
+                )}
+              >
                 <Image
                   src={image}
                   alt={title}
                   fill
-                  className="rounded-lg object-cover shadow"
+                  className="rounded-lg object-contain"
                 />
               </div>
               <figcaption className="text-lg font-medium dark:text-white">

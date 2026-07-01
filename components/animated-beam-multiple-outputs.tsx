@@ -244,7 +244,7 @@ export function AnimatedBeamMultipleOutputs({
         fromRef={div8Ref}
         toRef={div7Ref}
         duration={3}
-        curvature={-12}
+        curvature={12}
         delay={0.6}
       />
       <AnimatedBeam
@@ -253,7 +253,7 @@ export function AnimatedBeamMultipleOutputs({
         toRef={div8Ref}
         duration={3}
         reverse
-        curvature={12}
+        curvature={-12}
         delay={1.1}
       />
     </div>
