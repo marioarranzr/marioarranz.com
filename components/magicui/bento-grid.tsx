@@ -14,7 +14,7 @@ const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[18rem] md:auto-rows-[22rem] grid-cols-3 gap-2 lg:gap-4 transition-all duration-300 ease-out",
+        "grid w-full auto-rows-[18rem] md:auto-rows-[22rem] grid-cols-3 grid-flow-row-dense gap-2 lg:gap-4 transition-all duration-300 ease-out",
         className
       )}
     >
@@ -31,6 +31,7 @@ const BentoCard = ({
   description,
   href,
   cta,
+  hideOverlayOnHover = false,
 }: {
   name?: string;
   className?: string;
@@ -39,6 +40,7 @@ const BentoCard = ({
   description?: string;
   href?: string;
   cta?: string;
+  hideOverlayOnHover?: boolean;
 }) => (
   <BlurIn
     duration={0.1}
@@ -53,7 +55,12 @@ const BentoCard = ({
     )}
   >
     <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+    <div
+      className={cn(
+        "pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10",
+        hideOverlayOnHover && "group-hover:opacity-0"
+      )}
+    >
       <div className="flex flex-col gap-2">
         <div>
           {Icon !== "" ? (

@@ -163,9 +163,10 @@ const features = [
       "13+ years across payments, digital identity, and security, leading teams and shipping backend systems end to end.",
     href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/marioarranz/",
     cta: "View LinkedIn",
-    className: "col-span-3 md:col-span-1",
+    className: "col-span-3 md:col-span-1 md:row-span-2",
+    hideOverlayOnHover: true,
     background: (
-      <div className="absolute right-0 top-0 w-full h-3/4 [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)]">
+      <div className="absolute right-0 top-0 w-full h-full">
         <FadeIn direction="up" className="h-full">
           <Experience />
         </FadeIn>

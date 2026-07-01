@@ -33,8 +33,8 @@ export default function Experience() {
           <ExperienceCard key={item.company} item={item} />
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white transition-opacity duration-300 group-hover:opacity-0 dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white transition-opacity duration-300 group-hover:opacity-0 dark:from-background"></div>
     </div>
   );
 }
