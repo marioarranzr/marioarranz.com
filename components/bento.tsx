@@ -6,9 +6,7 @@ import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import BlurIn from "@/components/magicui/blur-in";
 import { EmailForm } from "@/components/email-form";
 import { FadeIn } from "@/components/magicui/fade-in";
-import GlobeAndStars from "@/components/globe-and-stars";
 import Hero from "@/components/hero";
-import Marquee from "@/components/magicui/marquee";
 import Technologies from "@/components/technologies";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Orbit from "@/components/orbit";
@@ -130,17 +128,15 @@ const features = [
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2.5 }}
+        className="absolute h-2/3 top-10 w-full [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]"
       >
-        <Marquee
-          className="absolute h-2/3 top-10 [--duration:40s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] w-full"
-          pauseOnHover
-        >
+        <div className="flex h-full gap-4 overflow-x-auto px-4 pb-2">
           {defaultDomains.map((f, idx) => (
             <a
               href={process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr"}
               key={idx}
               className={cn(
-                "relative w-52 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
+                "relative w-52 h-full shrink-0 cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -156,7 +152,7 @@ const features = [
               <blockquote className="mt-2 text-xs">{f.body}</blockquote>
             </a>
           ))}
-        </Marquee>
+        </div>
       </motion.div>
     ),
   },
@@ -170,7 +166,7 @@ const features = [
     className: "col-span-3 md:col-span-1",
     background: (
       <div className="absolute right-0 top-0 w-full h-3/4 [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)]">
-        <FadeIn direction="up">
+        <FadeIn direction="up" className="h-full">
           <Experience />
         </FadeIn>
       </div>
@@ -249,31 +245,6 @@ const features = [
         />
         <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105 z-10 pointer-events-none" />
       </motion.div>
-    ),
-  },
-
-  {
-    Icon: "",
-    name: "Worldwide Reach",
-    description:
-      "Deployed wherever your users are. Cloud, multi-region, or on-prem.",
-    className: "col-span-3 md:col-span-1",
-    href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
-    cta: "See example",
-    background: (
-      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105 group-hover:-translate-y-4">
-        <Particles
-          className="absolute inset-0 z-0"
-          quantity={80}
-          ease={60}
-          color="#ffffff"
-          staticity={40}
-          size={0.5}
-        />
-        <div className="relative z-10">
-          <GlobeAndStars />
-        </div>
-      </div>
     ),
   },
 
