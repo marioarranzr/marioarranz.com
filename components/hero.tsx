@@ -4,7 +4,7 @@ import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/magicui/fade-in";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Download } from "lucide-react";
 import BlurIn from "@/components/magicui/blur-in";
 
 export default function Hero() {
@@ -21,23 +21,22 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-full">
-          <FadeIn direction="down" className="my-class flex items-center gap-2 w-full">
+        <div className="w-full flex flex-col gap-3">
+          <FadeIn direction="down" className="flex items-center gap-2">
             <a
               href={
                 process.env.NEXT_PUBLIC_GITHUB_URL ||
                 "https://github.com/marioarranzr"
               }
               target="_blank"
-              className="flex-1"
+              aria-label="GitHub"
             >
               <Button
-                variant="default"
-                size="lg"
-                className="flex items-center gap-2 w-full group/Github"
+                variant="outline"
+                size="icon"
+                className="rounded-full group/Github"
               >
-                <div>GitHub</div>
-                <Github className="h-5 w-5 lg:group-hover/Github:translate-x-1 transition-all duration-300" />
+                <Github className="h-4 w-4 lg:group-hover/Github:translate-x-0.5 transition-all duration-300" />
               </Button>
             </a>
             <a
@@ -46,29 +45,40 @@ export default function Hero() {
                 "https://www.linkedin.com/in/marioarranz/"
               }
               target="_blank"
-              className="flex-1"
+              aria-label="LinkedIn"
             >
               <Button
-                variant="default"
-                size="lg"
-                className="flex items-center gap-2 w-full group/LinkedIn"
+                variant="outline"
+                size="icon"
+                className="rounded-full group/LinkedIn"
               >
-                <div>LinkedIn</div>
-                <Linkedin className="h-5 w-5 lg:group-hover/LinkedIn:translate-x-1 transition-all duration-300" />
+                <Linkedin className="h-4 w-4 lg:group-hover/LinkedIn:translate-x-0.5 transition-all duration-300" />
               </Button>
             </a>
+            <a href="/cv/Mario_Arranz.pdf" download aria-label="Download CV">
               <Button
-                variant="default"
-                size="lg"
-                className="flex items-center gap-2 w-full group/Mail"
-                onClick={() => {
-                  const element = document.getElementById('contact-form');
-                  element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }}
+                variant="outline"
+                size="icon"
+                className="rounded-full group/CV"
               >
-                <div>Email Me</div>
-                <Mail className="h-5 w-5 lg:group-hover/Mail:translate-x-1 transition-all duration-300" />
+                <Download className="h-4 w-4 lg:group-hover/CV:translate-y-0.5 transition-all duration-300" />
               </Button>
+            </a>
+          </FadeIn>
+
+          <FadeIn direction="down" className="w-full">
+            <Button
+              variant="default"
+              size="lg"
+              className="flex items-center justify-center gap-2 w-full group/Mail"
+              onClick={() => {
+                const element = document.getElementById('contact-form');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }}
+            >
+              <div>Email Me</div>
+              <Mail className="h-5 w-5 lg:group-hover/Mail:translate-x-1 transition-all duration-300" />
+            </Button>
           </FadeIn>
         </div>
       </div>
