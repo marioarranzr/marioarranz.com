@@ -18,6 +18,7 @@ import { defaultDomains } from "@/lib/data";
 import { RippleCard } from "./ui/ripper-card";
 import { motion } from "framer-motion";
 import ProjectPosts from "@/components/project-posts";
+import Experience from "@/components/experience";
 import Particles from "@/components/magicui/particles";
 import { WarpBackground } from "@/components/ui/warp-background";
 
@@ -57,7 +58,7 @@ const features = [
     Icon: "",
     name: "I'm Mario",
     description:
-      "Senior engineer who builds complete software products from scratch. Payments, crypto platforms, SaaS backends, and API-heavy systems.",
+      "13+ years of engineering, mainly in payments, digital identity, and security. I lead development teams and build backend systems that stay in production.",
     className: "col-span-3 md:col-span-1",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Visit portfolio",
@@ -157,6 +158,22 @@ const features = [
           ))}
         </Marquee>
       </motion.div>
+    ),
+  },
+  {
+    Icon: "",
+    name: "Experience",
+    description:
+      "13+ years across payments, digital identity, and security, leading teams and shipping backend systems end to end.",
+    href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/marioarranz/",
+    cta: "View LinkedIn",
+    className: "col-span-3 md:col-span-1",
+    background: (
+      <div className="absolute right-0 top-0 w-full h-3/4 [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)]">
+        <FadeIn direction="up">
+          <Experience />
+        </FadeIn>
+      </div>
     ),
   },
   {

@@ -4,7 +4,7 @@ import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/magicui/fade-in";
-import { Mail, Github } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 import BlurIn from "@/components/magicui/blur-in";
 
 export default function Hero() {
@@ -34,6 +34,23 @@ export default function Hero() {
               >
                 <div>GitHub</div>
                 <Github className="h-5 w-5 lg:group-hover/Github:translate-x-1 transition-all duration-300" />
+              </Button>
+            </a>
+            <a
+              href={
+                process.env.NEXT_PUBLIC_LINKEDIN_URL ||
+                "https://www.linkedin.com/in/marioarranz/"
+              }
+              target="_blank"
+              className="flex-1"
+            >
+              <Button
+                variant="default"
+                size="lg"
+                className="flex items-center gap-2 w-full group/LinkedIn"
+              >
+                <div>LinkedIn</div>
+                <Linkedin className="h-5 w-5 lg:group-hover/LinkedIn:translate-x-1 transition-all duration-300" />
               </Button>
             </a>
               <Button

@@ -105,6 +105,23 @@ export async function GET(request: Request) {
       },
     },
     {
+      id: "emr",
+      slug: "emr",
+      body: "Swiss registry certifying and connecting patients with qualified complementary medicine practitioners.",
+      collection: "posts",
+      data: {
+        layout: "default",
+        pubDate: new Date().toISOString(),
+        title: "EMR",
+        description: "Swiss registry certifying and connecting patients with qualified complementary medicine practitioners.",
+        category: "projects",
+        image: "/images/emr.svg",
+        tags: ["Healthcare", "Directory", "Switzerland"],
+        projectURL: "https://emr.ch/",
+        repoURL: null,
+      },
+    },
+    {
       id: "touchnote",
       slug: "touchnote",
       body: "Platform for creating and sending personalized physical postcards and greeting cards, delivered globally.",
