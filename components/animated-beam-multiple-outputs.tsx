@@ -38,8 +38,8 @@ export function AnimatedBeamMultipleOutputs({
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
   const div8Ref = useRef<HTMLDivElement>(null);
-  const curve = 20;
-  const curveReverse = -20;
+  const curve = 12;
+  const curveReverse = -12;
 
   return (
     <div
@@ -49,35 +49,35 @@ export function AnimatedBeamMultipleOutputs({
       )}
       ref={containerRef}
     >
-      <div className="flex h-full w-full flex-row items-stretch justify-between gap-10">
+      <div className="flex h-full w-full flex-row items-stretch justify-between gap-4">
         <div className="flex flex-col justify-center">
-          <Circle ref={div7Ref}>
+          <Circle ref={div7Ref} className="h-8 w-8 p-1.5">
             <Icons.user className="text-black" />
           </Circle>
         </div>
-        <div className="flex flex-col justify-center gap-3">
-          <Circle ref={div6Ref} className="h-16 w-16">
-            <Icons.openai className="h-6 w-6" />
+        <div className="flex flex-col justify-center gap-2">
+          <Circle ref={div6Ref} className="h-11 w-11 p-2">
+            <Icons.openai className="h-4 w-4" />
           </Circle>
-          <Circle ref={div8Ref} className="h-16 w-16">
+          <Circle ref={div8Ref} className="h-11 w-11 p-2">
             <Icons.claude />
           </Circle>
         </div>
-        <div className="flex flex-col justify-center gap-2">
-          <Circle ref={div1Ref}>
-            <Icons.svelte className="h-6 w-6" />
+        <div className="flex flex-col justify-center gap-1.5">
+          <Circle ref={div1Ref} className="h-8 w-8 p-1.5">
+            <Icons.svelte className="h-4 w-4" />
           </Circle>
-          <Circle ref={div2Ref}>
-            <Icons.nextjs className="h-6 w-6" />
+          <Circle ref={div2Ref} className="h-8 w-8 p-1.5">
+            <Icons.nextjs className="h-4 w-4" />
           </Circle>
-          <Circle ref={div3Ref}>
-            <Icons.bitcoin className="h-6 w-6" />
+          <Circle ref={div3Ref} className="h-8 w-8 p-1.5">
+            <Icons.bitcoin className="h-4 w-4" />
           </Circle>
-          <Circle ref={div4Ref}>
-            <Icons.fastAPI className="h-6 w-6" />
+          <Circle ref={div4Ref} className="h-8 w-8 p-1.5">
+            <Icons.fastAPI className="h-4 w-4" />
           </Circle>
-          <Circle ref={div5Ref}>
-            <Icons.notion className="h-6 w-6" />
+          <Circle ref={div5Ref} className="h-8 w-8 p-1.5">
+            <Icons.notion className="h-4 w-4" />
           </Circle>
         </div>
       </div>
@@ -183,7 +183,7 @@ export function AnimatedBeamMultipleOutputs({
         fromRef={div6Ref}
         toRef={div7Ref}
         duration={3}
-        curvature={-20}
+        curvature={-12}
       />
 
       <AnimatedBeam
@@ -192,7 +192,7 @@ export function AnimatedBeamMultipleOutputs({
         toRef={div6Ref}
         duration={3}
         reverse
-        curvature={20}
+        curvature={12}
         delay={1.5}
       />
 
@@ -244,7 +244,7 @@ export function AnimatedBeamMultipleOutputs({
         fromRef={div8Ref}
         toRef={div7Ref}
         duration={3}
-        curvature={-20}
+        curvature={-12}
         delay={0.6}
       />
       <AnimatedBeam
@@ -253,7 +253,7 @@ export function AnimatedBeamMultipleOutputs({
         toRef={div8Ref}
         duration={3}
         reverse
-        curvature={20}
+        curvature={12}
         delay={1.1}
       />
     </div>

@@ -1,38 +1,58 @@
+export const languages = [
+  { language: "English", level: "Full professional proficiency" },
+  { language: "Español", level: "Native or bilingual proficiency" },
+  { language: "German", level: "Limited working proficiency" },
+];
+
 export const experience = [
   {
     company: "Deep Impact AG",
     role: "Senior Software Engineer",
     period: "May 2025 - Present",
     location: "Winterthur, Zurich, Switzerland",
-    body: "Lead engineer on client AI projects, designing and integrating LLM APIs (Claude, OpenAI) into production-ready products.",
+    body: "Senior engineering role focused on delivering AI-powered solutions for clients, with technical leadership across multiple projects. Responsibilities cover the full lifecycle, architecture, design and delivery, building LLM integrations and turning them into practical, production-ready products.",
   },
   {
     company: "Paddle",
     role: "Senior Software Engineer",
     period: "Mar 2020 - May 2025",
     location: "Remote",
-    body: "Built and improved payment methods and acceptance across a billing platform used by thousands of SaaS businesses, pushing acceptance rates higher.",
+    body: "Senior engineering role within the team responsible for payment methods and payment acceptance at a payments and billing platform for SaaS companies. Over five years focused on building and improving how customers take payments, going deep into the complex world of payments infrastructure.",
   },
   {
     company: "TouchNote",
     role: "Senior Backend Developer",
     period: "Apr 2019 - Mar 2020",
     location: "United Kingdom",
-    body: "Led a small backend team building a microservices architecture in Go and Node behind an API-Gateway, deployed on AWS, Kubernetes and CircleCI.",
+    body: "Senior backend role leading a small engineering team, combining hands-on development with coordination of the team's work and technical direction. Focused on building a solid, resilient backend able to scale with the product.",
   },
   {
     company: "Yoti",
     role: "Backend Developer",
     period: "Oct 2017 - Apr 2019",
     location: "United Kingdom",
-    body: "Delivered a digital identity company's admin platform and microservices infrastructure in Go and Node, with security and data protection central to the work.",
+    body: "Backend role at a digital identity company, with security and privacy central to everything built. Work focused mainly on back-office systems, progressing from Java to Go alongside the modern tooling emerging around it.",
   },
   {
     company: "iGEO ERP",
     role: "Project Manager / Full Stack Developer",
     period: "Mar 2016 - Oct 2017",
     location: "Madrid, Spain",
-    body: "Built a cloud-based ERP for pest-control companies from scratch, moving from full-stack developer to project manager within months.",
+    body: "Early-stage startup building a cloud-based ERP platform from scratch, tailored to pest-control companies. Started as a full-stack developer and stepped up to project manager within months, balancing technical delivery with product and team leadership.",
+  },
+  {
+    company: "Amadeus",
+    role: "Full Stack Developer",
+    period: "Apr 2015 - Mar 2016",
+    location: "Madrid, Spain",
+    body: "Lead developer role building back-office platforms for companies operating within the Amadeus travel ecosystem, including clients such as Trenitalia.",
+  },
+  {
+    company: "Tecnilogica SL",
+    role: "Backend Developer",
+    period: "Sep 2012 - Apr 2015",
+    location: "Madrid, Spain",
+    body: "Backend role that started as an internship while finishing university studies, growing into a full member of the team over nearly three years. Contributed to multiple projects, mainly in the tourism sector.",
   },
 ];
 

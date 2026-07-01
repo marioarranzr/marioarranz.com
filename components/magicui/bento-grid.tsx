@@ -14,7 +14,7 @@ const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[18rem] md:auto-rows-[22rem] grid-cols-3 grid-flow-row-dense gap-2 lg:gap-4 transition-all duration-300 ease-out",
+        "grid w-full auto-rows-[18rem] md:auto-rows-[22rem] grid-cols-3 md:grid-cols-6 grid-flow-row-dense gap-2 lg:gap-4 transition-all duration-300 ease-out",
         className
       )}
     >
@@ -37,7 +37,7 @@ const BentoCard = ({
   className?: string;
   background?: ReactNode;
   Icon?: any;
-  description?: string;
+  description?: ReactNode;
   href?: string;
   cta?: string;
   hideOverlayOnHover?: boolean;
@@ -74,9 +74,9 @@ const BentoCard = ({
           {name}
         </div>
       </div>
-      <p className="w-full text-neutral-500 dark:text-neutral-400 dark:drop-shadow">
+      <div className="w-full text-neutral-500 dark:text-neutral-400 dark:drop-shadow">
         {description}
-      </p>
+      </div>
     </div>
 
     {/*

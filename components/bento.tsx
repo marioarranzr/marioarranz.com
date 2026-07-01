@@ -7,18 +7,20 @@ import BlurIn from "@/components/magicui/blur-in";
 import { EmailForm } from "@/components/email-form";
 import { FadeIn } from "@/components/magicui/fade-in";
 import Hero from "@/components/hero";
-import Technologies from "@/components/technologies";
+import TechIconGrid from "@/components/tech-icon-grid";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Orbit from "@/components/orbit";
 import RetroGrid from "@/components/magicui/retro-grid";
 import { cn } from "@/lib/utils";
-import { defaultDomains } from "@/lib/data";
+import { defaultDomains, languages } from "@/lib/data";
 import { RippleCard } from "./ui/ripper-card";
 import { motion } from "framer-motion";
 import ProjectPosts from "@/components/project-posts";
 import Experience from "@/components/experience";
 import Particles from "@/components/magicui/particles";
 import { WarpBackground } from "@/components/ui/warp-background";
+
+const languageFlags = ["🇬🇧", "🇪🇸", "🇩🇪"];
 
 const features = [
   {
@@ -27,7 +29,7 @@ const features = [
     description: "",
     href: "",
     cta: "",
-    className: "col-span-3 md:col-span-2",
+    className: "col-span-3 md:col-span-3",
     background: (
       <>
         <Particles
@@ -55,14 +57,22 @@ const features = [
   {
     Icon: "",
     name: "I'm Mario",
-    description:
-      "13+ years of engineering, mainly in payments, digital identity, and security. I lead development teams and build backend systems that stay in production.",
-    className: "col-span-3 md:col-span-1",
+    description: (
+      <>
+        13+ years of engineering, mainly in payments, digital identity, and security. I lead development teams and build backend systems that stay in production.
+        <div className="mt-2 flex gap-1.5 text-sm" title={languages.map((l) => l.language).join(", ")}>
+          {languageFlags.map((flag) => (
+            <span key={flag}>{flag}</span>
+          ))}
+        </div>
+      </>
+    ),
+    className: "col-span-3 md:col-span-3",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "Visit portfolio",
     background: (
       <div>
-        <div className="absolute right-0 top-0 h-3/4 w-full border-none [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)]">
+        <div className="absolute right-0 top-0 h-3/4 w-full border-none [mask-image:linear-gradient(to_top,transparent_30%,#000_65%)]">
           <BlurIn duration={0.5} className="group-hover:scale-105 transition-transform duration-500 ease-in-out">
             <Image
               className="object-cover object-center h-full w-full"
@@ -122,7 +132,7 @@ const features = [
     description: "The areas I cover, built around shipping complete, production-ready systems.",
     href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr",
     cta: "View projects",
-    className: "col-span-3 md:col-span-3",
+    className: "col-span-3 md:col-span-6",
     background: (
       <motion.div
         initial={{ opacity: 0 }}
@@ -163,10 +173,10 @@ const features = [
       "13+ years across payments, digital identity, and security, leading teams and shipping backend systems end to end.",
     href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/marioarranz/",
     cta: "View LinkedIn",
-    className: "col-span-3 md:col-span-1 md:row-span-2",
+    className: "col-span-3 md:col-span-3 md:row-span-2",
     hideOverlayOnHover: true,
     background: (
-      <div className="absolute right-0 top-0 w-full h-full">
+      <div className="absolute right-0 top-0 w-full h-full [mask-image:linear-gradient(to_top,transparent_120px,#000_220px)] group-hover:[mask-image:none]">
         <FadeIn direction="up" className="h-full">
           <Experience />
         </FadeIn>
@@ -175,77 +185,73 @@ const features = [
   },
   {
     Icon: "",
-    name: "Technologies",
-    description:
-      "Proven tools chosen for reliability. The stack is secondary to the system design.",
-    href: "/technologies",
-    cta: "View all technologies",
-    className: "col-span-3 md:col-span-2",
+    name: "",
+    description: "",
+    href: "",
+    cta: "",
+    className: "col-span-3 md:col-span-3 md:row-span-2",
     background: (
-      <div className="absolute right-0 top-0 w-[80%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] md:[mask-image:linear-gradient(to_top,transparent_50%,#000_70%)] group-hover:-translate-y-5 group-hover:scale-105">
-        <FadeIn direction="up">
-          <Technologies />
-        </FadeIn>
-      </div>
-    ),
-  },
-
-  {
-    Icon: "",
-    name: "Seamless Deployments",
-    description: "Reliable releases with monitoring, rollback, and observability built in from the start.",
-    className: "col-span-3 md:col-span-1",
-    href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
-    cta: "Learn more",
-    background: (
-      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_45%,#000_75%)] group-hover:scale-105">
-        <Orbit />
-      </div>
-    ),
-  },
-  {
-    Icon: "",
-    name: "AI Integrations",
-    description:
-      "LLM pipelines, retrieval, and AI-assisted workflows hardened for production environments.",
-    href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
-    cta: "Explore AI work",
-    className: "col-span-3 md:col-span-2",
-    background: (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="relative"
-      >
-        <div className="absolute left-4 top-4 z-20 flex gap-2">
-          <a
-            href="https://openai.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur"
-          >
-            OpenAI
-          </a>
-          <a
-            href="https://www.anthropic.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur"
-          >
-            Claude
-          </a>
+      <div className="absolute inset-0 flex h-full w-full flex-col gap-2 p-2">
+        <div
+          className={cn(
+            "group/tile relative min-h-0 flex-1 overflow-hidden rounded-xl border transition-all duration-300",
+            "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+            "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+          )}
+        >
+          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover/tile:scale-105">
+            <TechIconGrid />
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 pt-8">
+            <div className="text-lg font-semibold dark:text-white">Technologies</div>
+            <div className="text-xs text-neutral-500 dark:text-neutral-400">
+              Proven tools chosen for reliability.
+            </div>
+          </div>
         </div>
-        <Particles
-          className="absolute inset-0 z-0"
-          quantity={60}
-          ease={70}
-          color="#ffffff"
-          staticity={35}
-          size={0.4}
-        />
-        <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105 z-10 pointer-events-none" />
-      </motion.div>
+
+        <div
+          className={cn(
+            "group/tile relative min-h-0 flex-1 overflow-hidden rounded-xl border transition-all duration-300",
+            "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+            "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+          )}
+        >
+          <div className="absolute right-0 top-0 h-full w-full origin-top transition-all duration-300 ease-out group-hover/tile:scale-105">
+            <Orbit />
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 pt-8">
+            <div className="text-lg font-semibold dark:text-white">Seamless Deployments</div>
+            <div className="text-xs text-neutral-500 dark:text-neutral-400">
+              Reliable releases with monitoring and rollback built in.
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={cn(
+            "group/tile relative min-h-0 flex-1 overflow-hidden rounded-xl border transition-all duration-300",
+            "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+            "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+          )}
+        >
+          <Particles
+            className="absolute inset-0 z-0"
+            quantity={30}
+            ease={70}
+            color="#ffffff"
+            staticity={35}
+            size={0.4}
+          />
+          <AnimatedBeamMultipleOutputs className="absolute inset-0 h-full w-full max-w-none border-none p-2 transition-all duration-300 ease-out group-hover/tile:scale-105 pointer-events-none" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 pt-8">
+            <div className="text-lg font-semibold dark:text-white">AI Integrations</div>
+            <div className="text-xs text-neutral-500 dark:text-neutral-400">
+              LLM pipelines hardened for production.
+            </div>
+          </div>
+        </div>
+      </div>
     ),
   },
 
@@ -254,7 +260,7 @@ const features = [
     name: "Project Showcase",
     description:
       "Systems I've designed and shipped. Payment platforms, crypto systems, SaaS backends.",
-    className: "col-span-3 md:col-span-3",
+    className: "col-span-3 md:col-span-6",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "View projects",
     background: (
@@ -275,7 +281,7 @@ const features = [
     Icon: "",
     name: "",
     description: "",
-    className: "col-span-3 md:col-span-3 row-span-2",
+    className: "col-span-3 md:col-span-6 row-span-2",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "",
     background: (
