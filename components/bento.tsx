@@ -136,20 +136,21 @@ const features = [
     href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr",
     cta: "View projects",
     className: "col-span-3 md:col-span-6",
+    hideOverlayOnHover: true,
     background: (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2.5 }}
-        className="absolute h-2/3 top-10 w-full [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]"
+        className="absolute top-10 w-full transition-all duration-300 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:[mask-image:none]"
       >
-        <div className="flex h-full gap-4 overflow-x-auto px-4 pb-2">
+        <div className="flex gap-4 overflow-x-auto px-4 pb-2">
           {defaultDomains.map((f, idx) => (
             <a
               href={process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/marioarranzr"}
               key={idx}
               className={cn(
-                "relative w-52 h-full shrink-0 cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
+                "relative w-52 shrink-0 cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -192,7 +193,7 @@ const features = [
     description: "",
     href: "",
     cta: "",
-    className: "col-span-3 md:col-span-3 md:row-span-2",
+    className: "col-span-3 md:col-span-3 row-span-2",
     background: (
       <div className="absolute inset-0 flex h-full w-full flex-col gap-2 p-2">
         <div
@@ -284,7 +285,7 @@ const features = [
     Icon: "",
     name: "",
     description: "",
-    className: "col-span-3 md:col-span-6 row-span-2",
+    className: "col-span-3 md:col-span-6 md:row-span-2",
     href: process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com",
     cta: "",
     background: (
@@ -301,16 +302,16 @@ const features = [
           size={0.3}
         />
         <div className="absolute inset-0 z-50 flex justify-center items-center gap-5 p-5">
-          <div className="max-w-sm w-full flex flex-col gap-2">
-            <div className="text-5xl md:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
+          <div className="max-w-sm w-full flex flex-col gap-1.5 md:gap-2">
+            <div className="text-3xl md:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
               <BlurIn duration={0.5} className="h-full">
                 Let&apos;s work together.
               </BlurIn>
             </div>
-            <div className="w-full flex justify-center text-neutral-500 dark:text-neutral-400">
+            <div className="w-full flex justify-center text-sm md:text-base text-neutral-500 dark:text-neutral-400">
               Tell me what you&apos;re building. I&apos;ll respond within a day.
             </div>
-            <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+            <div className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400 mt-1 md:mt-2">
               *Your email is never shared.
             </div>
             <div className="">
