@@ -42,7 +42,12 @@ const ReviewCard = ({ project }: { project: Project }) => {
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <a href={projectURL || `${portfolioUrl}/#projects/${slug}`} target="_blank" rel="noopener noreferrer">
+      <a
+        href={projectURL || `${portfolioUrl}/#projects/${slug}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="pointer-events-none md:pointer-events-auto"
+      >
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <div className="flex items-start gap-2">

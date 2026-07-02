@@ -28,7 +28,7 @@ const icons = [
 
 export default function TechIconGrid() {
   return (
-    <div className="flex h-full w-full flex-nowrap items-center justify-center gap-2 px-4">
+    <div className="flex h-full w-full flex-wrap md:flex-nowrap content-center items-center justify-center gap-2 px-4">
       {icons.map(({ Icon, color }, idx) => (
         <div
           key={idx}

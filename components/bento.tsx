@@ -151,6 +151,7 @@ const features = [
               key={idx}
               className={cn(
                 "relative w-52 shrink-0 cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
+                "pointer-events-none md:pointer-events-auto",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -203,7 +204,7 @@ const features = [
             "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
           )}
         >
-          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover/tile:scale-105">
+          <div className="absolute inset-x-0 top-0 bottom-16 flex items-center justify-center transition-transform duration-300 ease-out group-hover/tile:scale-105">
             <TechIconGrid />
           </div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 pt-8">
