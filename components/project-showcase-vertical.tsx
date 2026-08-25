@@ -2,9 +2,6 @@ import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
 import Image from "next/image";
 
-const portfolioUrl =
-  process.env.NEXT_PUBLIC_PORTFOLIO_URL || "https://marioarranz.com";
-
 export interface Project {
   id: string;
   slug: string;
@@ -29,51 +26,44 @@ interface ProjectShowcaseVerticalProps {
 }
 
 const ReviewCard = ({ project }: { project: Project }) => {
-  const { slug, body, data } = project;
-  const { title, image, description, projectURL, iconOnLight } = data;
+  const { data } = project;
+  const { title, image, description, iconOnLight } = data;
 
   return (
     <figure
       className={cn(
-        "relative h-40 w-full cursor-pointer overflow-hidden rounded-xl border p-4 shadow",
+        "relative h-40 w-full overflow-hidden rounded-xl border p-4 shadow",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <a
-        href={projectURL || `${portfolioUrl}/#projects/${slug}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="pointer-events-none md:pointer-events-auto"
-      >
-        <div className="flex flex-row items-center gap-2">
-          <div className="flex flex-col">
-            <div className="flex items-start gap-2">
-              <div
-                className={cn(
-                  "relative h-12 w-14 rounded-lg shadow",
-                  iconOnLight && "bg-white p-1.5"
-                )}
-              >
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  className="rounded-lg object-contain"
-                />
-              </div>
-              <figcaption className="text-lg font-medium dark:text-white">
-                {title}
-              </figcaption>
+      <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-col">
+          <div className="flex items-start gap-2">
+            <div
+              className={cn(
+                "relative h-12 w-14 rounded-lg shadow",
+                iconOnLight && "bg-white p-1.5"
+              )}
+            >
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="rounded-lg object-contain"
+              />
             </div>
+            <figcaption className="text-lg font-medium dark:text-white">
+              {title}
+            </figcaption>
           </div>
         </div>
-        <blockquote className="mt-2 text-sm line-clamp-4 dark:text-white font-thin">
-          {description}
-        </blockquote>
-      </a>
+      </div>
+      <blockquote className="mt-2 text-sm line-clamp-4 dark:text-white font-thin">
+        {description}
+      </blockquote>
     </figure>
   );
 };
