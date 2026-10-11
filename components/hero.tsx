@@ -16,7 +16,7 @@ export default function Hero() {
 
           <div className="text-base text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
             <BlurIn className="w-full">
-              I take products from idea to production. Senior architecture, AI-accelerated delivery, and full ownership of the build. We ship fast without cutting corners.
+              I take products from idea to production. Senior architecture, AI-accelerated delivery, and full ownership of the build. I ship fast without cutting corners.
             </BlurIn>
           </div>
         </div>
