@@ -56,6 +56,30 @@ export const experience = [
   },
 ];
 
+export const projects = [
+  {
+    name: "radar",
+    problem: "Research any company on the web and get a one-page sales brief with cited sources.",
+    stack: ["Next.js", "OpenAI Responses API", "SQLite"],
+    result: "~1 min per brief, sources cited per claim",
+    repo: "https://github.com/marioarranzr/radar",
+  },
+  {
+    name: "questionnaire-copilot",
+    problem: "Draft answers to security questionnaires (100-300 questions in Excel) from a curated fact bank. Marks unsupported items as 'needs input' with an owner.",
+    stack: ["Node.js", "OpenAI API", "Zod structured outputs", "CSV/XLSX"],
+    result: "33 questions in ~25s, 30-32/33 accuracy, 0 overclaims on eval",
+    repo: "https://github.com/marioarranzr/questionnaire-copilot",
+  },
+  {
+    name: "garmin-coach-template",
+    problem: "Self-adjusting running and triathlon coach for Garmin: reads your recovery data daily and puts the right workout on your watch.",
+    stack: ["Python", "Garmin Connect API"],
+    result: "Fully automated daily plan - no manual scheduling",
+    repo: "https://github.com/marioarranzr/garmin-coach-template",
+  },
+];
+
 export const now = {
   date: "Oct 2026",
   items: [

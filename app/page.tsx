@@ -1,5 +1,5 @@
 import Hero from "@/components/hero";
-import { experience, now, stack } from "@/lib/data";
+import { experience, now, projects, stack } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -54,9 +54,42 @@ export default function Home() {
         {/* Projects */}
         <section id="projects">
           <SectionLabel>Projects</SectionLabel>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 pl-4 border-l-2 border-border">
-            First projects shipping soon. Each will have a problem statement, stack, measured result, and link to the repo.
-          </p>
+          <div className="flex flex-col gap-6">
+            {projects.map((p) => (
+              <a
+                key={p.name}
+                href={p.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block border border-border rounded-lg p-4 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-sm dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    {p.name}
+                  </span>
+                  <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0">
+                    ↗
+                  </span>
+                </div>
+                <p className="mt-1.5 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                  {p.problem}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {p.stack.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/80 border border-border rounded px-2 py-0.5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-3 text-xs text-emerald-600 dark:text-emerald-400">
+                  {p.result}
+                </p>
+              </a>
+            ))}
+          </div>
         </section>
 
         <hr className="border-border/60" />
