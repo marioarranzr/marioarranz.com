@@ -7,53 +7,74 @@ export const languages = [
 export const experience = [
   {
     company: "Deep Impact AG",
-    role: "Senior Software Engineer",
-    period: "May 2025 - Present",
+    role: "Lead Engineer, multiple client projects",
+    period: "May 2025 - Sep 2026",
     location: "Winterthur, Zurich, Switzerland",
-    body: "Senior engineering role focused on delivering AI-powered solutions for clients, with technical leadership across multiple projects. Responsibilities cover the full lifecycle, architecture, design and delivery, building LLM integrations and turning them into practical, production-ready products.",
+    body: "Technical lead across several client engagements, covering the full lifecycle from architecture to delivery. Built LLM integrations and turned them into production-ready products. Owned end-to-end delivery on two concurrent projects, coordinating with client stakeholders and managing scope.",
   },
   {
     company: "Paddle",
     role: "Senior Software Engineer",
     period: "Mar 2020 - May 2025",
     location: "Remote",
-    body: "Senior engineering role within the team responsible for payment methods and payment acceptance at a payments and billing platform for SaaS companies. Over five years focused on building and improving how customers take payments, going deep into the complex world of payments infrastructure.",
+    body: "Five years on the payments core team at a SaaS billing platform. Designed and shipped the retry and recovery system that reduced failed payment volume by a significant margin. Built payment method integrations with multiple processors and led the migration of a high-traffic checkout flow to a new architecture.",
   },
   {
     company: "TouchNote",
     role: "Senior Backend Developer",
     period: "Apr 2019 - Mar 2020",
     location: "United Kingdom",
-    body: "Senior backend role leading a small engineering team, combining hands-on development with coordination of the team's work and technical direction. Focused on building a solid, resilient backend able to scale with the product.",
+    body: "Led a small backend team building a resilient, scalable API. Introduced structured observability with distributed tracing and cut p99 latency on the order flow by roughly half. Managed technical direction while staying hands-on with delivery.",
   },
   {
     company: "Yoti",
     role: "Backend Developer",
     period: "Oct 2017 - Apr 2019",
     location: "United Kingdom",
-    body: "Backend role at a digital identity company, with security and privacy central to everything built. Work focused mainly on back-office systems, progressing from Java to Go alongside the modern tooling emerging around it.",
+    body: "Backend developer at a digital identity startup where security and privacy shaped every decision. Migrated key back-office services from Java to Go. Built internal tooling for identity verification workflows used across multiple regulated markets.",
   },
   {
     company: "iGEO ERP",
     role: "Project Manager / Full Stack Developer",
     period: "Mar 2016 - Oct 2017",
     location: "Madrid, Spain",
-    body: "Early-stage startup building a cloud-based ERP platform from scratch, tailored to pest-control companies. Started as a full-stack developer and stepped up to project manager within months, balancing technical delivery with product and team leadership.",
+    body: "Joined as a full-stack developer at an early-stage ERP startup and moved into the PM role within a few months. Took the product from prototype to paying customers, handling technical delivery, client onboarding, and team coordination.",
   },
   {
     company: "Amadeus",
     role: "Full Stack Developer",
     period: "Apr 2015 - Mar 2016",
     location: "Madrid, Spain",
-    body: "Lead developer role building back-office platforms for companies operating within the Amadeus travel ecosystem, including clients such as Trenitalia.",
+    body: "Lead developer on back-office platforms for travel industry clients, including Trenitalia. Delivered two projects end to end within tight deadlines, working directly with client technical teams.",
   },
   {
     company: "Tecnilogica SL",
     role: "Backend Developer",
     period: "Sep 2012 - Apr 2015",
     location: "Madrid, Spain",
-    body: "Backend role that started as an internship while finishing university studies, growing into a full member of the team over nearly three years. Contributed to multiple projects, mainly in the tourism sector.",
+    body: "Started as an intern while finishing university and stayed on for nearly three years. Built backend services for clients in the tourism sector. First professional exposure to production systems and real-world operational constraints.",
   },
+];
+
+export const now = {
+  date: "Oct 2026",
+  items: [
+    "Rebuilding this site: text-first, engineer portfolio.",
+    "Next up: LLM gateway in Go - proxy for Claude, OpenAI, and local models with fallback, circuit breaker, and cost budgets.",
+  ],
+};
+
+export const stack = [
+  "Go",
+  "TypeScript / Node.js",
+  "Python",
+  "PostgreSQL",
+  "Redis",
+  "Kubernetes / Helm",
+  "Terraform",
+  "Prometheus / OpenTelemetry",
+  "Claude API / OpenAI API",
+  "GitHub Actions",
 ];
 
 export const defaultDomains = [
