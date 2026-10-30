@@ -59,7 +59,7 @@ const features = [
     name: "I'm Mario",
     description: (
       <>
-        13+ years in payments, digital identity, and security. I lead teams and build backend systems that stay in production.
+        12+ years in payments, digital identity, and security. I lead teams and build backend systems that stay in production.
         <div className="mt-1 flex gap-1.5 text-sm" title={languages.map((l) => l.language).join(", ")}>
           {languageFlags.map((flag) => (
             <span key={flag}>{flag}</span>
@@ -175,7 +175,7 @@ const features = [
     Icon: "",
     name: "Experience",
     description:
-      "13+ years across payments, digital identity, and security, leading teams and shipping backend systems end to end.",
+      "12+ years across payments, digital identity, and security, leading teams and shipping backend systems end to end.",
     href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/marioarranz/",
     cta: "View LinkedIn",
     className: "col-span-3 md:col-span-3 md:row-span-2",
