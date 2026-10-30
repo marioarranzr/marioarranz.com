@@ -56,6 +56,27 @@ export const experience = [
   },
 ];
 
+export const now = {
+  date: "Oct 2026",
+  items: [
+    "Rebuilding this site: text-first, engineer portfolio.",
+    "Next up: LLM gateway in Go - proxy for Claude, OpenAI, and local models with fallback, circuit breaker, and cost budgets.",
+  ],
+};
+
+export const stack = [
+  "Go",
+  "TypeScript / Node.js",
+  "Python",
+  "PostgreSQL",
+  "Redis",
+  "Kubernetes / Helm",
+  "Terraform",
+  "Prometheus / OpenTelemetry",
+  "Claude API / OpenAI API",
+  "GitHub Actions",
+];
+
 export const defaultDomains = [
   {
     name: "Backend Architecture",
