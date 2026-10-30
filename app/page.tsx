@@ -2,6 +2,17 @@ import Hero from "@/components/hero";
 import { experience, now, stack } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-2 mb-6">
+      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+      <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+        {children}
+      </h2>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
@@ -9,30 +20,31 @@ export default function Home() {
         <div className="max-w-2xl mx-auto flex h-14 items-center justify-between px-6">
           <span className="font-semibold text-sm tracking-tight dark:text-white">marioarranz.com</span>
           <nav className="flex items-center gap-5 text-sm text-neutral-500 dark:text-neutral-400">
-            <a href="#now" className="hover:text-foreground transition-colors">Now</a>
-            <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
-            <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
-            <a href="#writing" className="hover:text-foreground transition-colors">Writing</a>
+            <a href="#now" className="hover:text-foreground transition-colors hidden sm:block">Now</a>
+            <a href="#projects" className="hover:text-foreground transition-colors hidden sm:block">Projects</a>
+            <a href="#experience" className="hover:text-foreground transition-colors hidden sm:block">Experience</a>
             <ThemeToggle />
           </nav>
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-6 py-12 flex flex-col gap-20">
+      <main className="max-w-2xl mx-auto px-6 py-14 flex flex-col gap-16">
 
-        {/* Intro */}
         <section>
           <Hero />
         </section>
 
+        <hr className="border-border/60" />
+
         {/* Now */}
         <section id="now">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-4">
-            Now <span className="font-normal normal-case tracking-normal text-neutral-400 dark:text-neutral-500">- {now.date}</span>
-          </h2>
-          <ul className="flex flex-col gap-2">
+          <SectionLabel>Now - {now.date}</SectionLabel>
+          <ul className="flex flex-col gap-3">
             {now.items.map((item, i) => (
-              <li key={i} className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed pl-4 border-l border-border">
+              <li
+                key={i}
+                className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed pl-4 border-l-2 border-emerald-500/40"
+              >
                 {item}
               </li>
             ))}
@@ -41,53 +53,48 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-4">
-            Projects
-          </h2>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Projects shipping soon. Each one will have a problem, stack, measured result, and link to the repo.
+          <SectionLabel>Projects</SectionLabel>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 pl-4 border-l-2 border-border">
+            First projects shipping soon. Each will have a problem statement, stack, measured result, and link to the repo.
           </p>
         </section>
 
+        <hr className="border-border/60" />
+
         {/* Experience */}
         <section id="experience">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-6">
-            Experience
-          </h2>
-          <div className="flex flex-col gap-8">
-            {experience.map((item) => (
-              <div key={item.company}>
-                <div className="flex items-baseline justify-between gap-4 flex-wrap">
-                  <span className="font-semibold text-sm dark:text-white">{item.company}</span>
-                  <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0">{item.period}</span>
+          <SectionLabel>Experience</SectionLabel>
+          <div className="flex flex-col">
+            {experience.map((item, i) => (
+              <div key={item.company} className="grid grid-cols-[20px_1fr] gap-x-4">
+                <div className="flex flex-col items-center">
+                  <div className={`w-px flex-none h-3 ${i === 0 ? "bg-emerald-500/60" : "bg-border"}`} />
+                  <div className={`w-2 h-2 rounded-full shrink-0 ${i === 0 ? "bg-emerald-500" : "bg-neutral-300 dark:bg-neutral-600"}`} />
+                  <div className={`w-px flex-1 min-h-4 ${i === experience.length - 1 ? "bg-transparent" : "bg-border"}`} />
                 </div>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{item.role}</div>
-                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{item.body}</p>
+                <div className="pb-8">
+                  <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                    <span className="font-semibold text-sm dark:text-white">{item.company}</span>
+                    <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0 tabular-nums">{item.period}</span>
+                  </div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 italic">{item.role}</div>
+                  <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{item.body}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Writing */}
-        <section id="writing">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-4">
-            Writing
-          </h2>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Posts will appear here as each project ships.
-          </p>
-        </section>
+        <hr className="border-border/60" />
 
         {/* Stack */}
         <section id="stack">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-4">
-            Stack
-          </h2>
+          <SectionLabel>Stack</SectionLabel>
           <ul className="flex flex-wrap gap-2">
             {stack.map((item) => (
               <li
                 key={item}
-                className="text-xs text-neutral-600 dark:text-neutral-300 border border-border rounded px-2 py-1"
+                className="text-xs text-neutral-600 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800/80 border border-border rounded-md px-2.5 py-1"
               >
                 {item}
               </li>
@@ -97,8 +104,13 @@ export default function Home() {
 
       </main>
 
-      <footer className="max-w-2xl mx-auto px-6 py-8 border-t border-border/40 text-xs text-neutral-400 dark:text-neutral-500">
-        Mario Arranz - Zurich
+      <footer className="max-w-2xl mx-auto px-6 py-8 border-t border-border/40">
+        <p className="text-xs text-neutral-400 dark:text-neutral-500">
+          Mario Arranz - Zurich -{" "}
+          <a href="mailto:marioarranzr@gmail.com" className="hover:text-foreground transition-colors">
+            marioarranzr@gmail.com
+          </a>
+        </p>
       </footer>
     </div>
   );
