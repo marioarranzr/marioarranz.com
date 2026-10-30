@@ -55,7 +55,7 @@ export default function Hero() {
             <Linkedin className="h-4 w-4" />
           </Button>
         </a>
-        <a href="/cv/Mario_Arranz.pdf" download aria-label="Download CV">
+        <a href={process.env.NEXT_PUBLIC_CV_URL || "/cv/Mario_Arranz.pdf"} download aria-label="Download CV">
           <Button variant="outline" size="icon" className="rounded-full">
             <Download className="h-4 w-4" />
           </Button>
