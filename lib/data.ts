@@ -20,6 +20,14 @@ export const experience = [
     body: "Five years on the payments core team at a SaaS billing platform. Designed and shipped the retry and recovery system that reduced failed payment volume by a significant margin. Built payment method integrations with multiple processors and led the migration of a high-traffic checkout flow to a new architecture.",
   },
   {
+    company: "Independent",
+    role: "Algorithmic Trader (crypto), alongside employment",
+    period: "2020 - 2023",
+    location: "Switzerland / Remote",
+    body: "Built and ran my own low-latency trading bot in Go with real capital, first on Kraken and later on Hyperliquid. It caught millisecond-scale price spikes in low-liquidity tokens and traded their repetitions, with position size capped at about 5% of the incoming liquidity. Profitable until 2023, when deeper liquidity removed the edge.",
+    link: "/projects/trading-bot",
+  },
+  {
     company: "TouchNote",
     role: "Senior Backend Developer",
     period: "Apr 2019 - Mar 2020",
@@ -57,6 +65,13 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    name: "crypto trading bot",
+    problem: "Low-latency bot that detected recurring, liquidity-driven price spikes in low-liquidity tokens and traded each repetition, on centralized and decentralized exchanges.",
+    stack: ["Go", "WebSockets", "Kraken API", "Hyperliquid"],
+    result: "Profitable 2020 - 2023, often 10+ round trips per event",
+    repo: "/projects/trading-bot",
+  },
   {
     name: "radar",
     problem: "Research any company on the web and get a one-page sales brief with cited sources.",

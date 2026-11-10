@@ -59,8 +59,7 @@ export default function Home() {
               <a
                 key={p.name}
                 href={p.repo}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(p.repo.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="group block border border-border rounded-lg p-4 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
               >
                 <div className="flex items-center justify-between gap-2">
@@ -68,7 +67,7 @@ export default function Home() {
                     {p.name}
                   </span>
                   <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0">
-                    ↗
+                    {p.repo.startsWith("http") ? "↗" : "→"}
                   </span>
                 </div>
                 <p className="mt-1.5 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
@@ -112,6 +111,11 @@ export default function Home() {
                   </div>
                   <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 italic">{item.role}</div>
                   <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{item.body}</p>
+                  {"link" in item && item.link ? (
+                    <a href={item.link} className="mt-2 inline-block text-xs text-emerald-600 dark:text-emerald-400 hover:underline">
+                      Read the case study →
+                    </a>
+                  ) : null}
                 </div>
               </div>
             ))}
