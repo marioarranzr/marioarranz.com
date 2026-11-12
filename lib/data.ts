@@ -58,6 +58,13 @@ export const experience = [
 
 export const projects = [
   {
+    name: "llm-gateway",
+    problem: "OpenAI-compatible proxy in Go: routes across multiple providers (OpenAI, Anthropic), circuit breaker per provider, Redis cache, and per-key daily cost budgets.",
+    stack: ["Go", "Redis", "Prometheus", "Docker"],
+    result: "< 5ms added latency, automatic fallback when a provider is down",
+    repo: "https://github.com/marioarranzr/llm-gateway",
+  },
+  {
     name: "radar",
     problem: "Research any company on the web and get a one-page sales brief with cited sources.",
     stack: ["Next.js", "OpenAI Responses API", "SQLite"],
@@ -79,14 +86,6 @@ export const projects = [
     repo: "https://github.com/marioarranzr/garmin-coach-template",
   },
 ];
-
-export const now = {
-  date: "Oct 2026",
-  items: [
-    "Rebuilding this site: text-first, engineer portfolio.",
-    "Next up: LLM gateway in Go - proxy for Claude, OpenAI, and local models with fallback, circuit breaker, and cost budgets.",
-  ],
-};
 
 export const stack = [
   "Go",
